@@ -12,6 +12,7 @@ public class SdkConfig {
 
   static {
     SUPPORTED_APIS = new HashMap<Integer, SdkVersion>();
+    SUPPORTED_APIS.put(Build.VERSION_CODES.ICE_CREAM_SANDWICH, new SdkVersion("4.1.2_r1", "0"));
     SUPPORTED_APIS.put(Build.VERSION_CODES.JELLY_BEAN, new SdkVersion("4.1.2_r1", "0"));
     SUPPORTED_APIS.put(Build.VERSION_CODES.JELLY_BEAN_MR1, new SdkVersion("4.2.2_r1.2", "0"));
     SUPPORTED_APIS.put(Build.VERSION_CODES.JELLY_BEAN_MR2, new SdkVersion("4.3_r2", "0"));

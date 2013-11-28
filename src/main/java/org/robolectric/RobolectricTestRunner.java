@@ -2,20 +2,7 @@ package org.robolectric;
 
 import android.app.Application;
 import android.os.Build;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.net.URL;
-import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 import org.apache.maven.artifact.ant.DependenciesTask;
-import org.jetbrains.annotations.TestOnly;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
@@ -47,6 +34,19 @@ import org.robolectric.util.DatabaseConfig.DatabaseMap;
 import org.robolectric.util.DatabaseConfig.UsingDatabaseMap;
 import org.robolectric.util.Pair;
 import org.robolectric.util.SQLiteMap;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 import static org.fest.reflect.core.Reflection.constructor;
 import static org.fest.reflect.core.Reflection.staticField;
@@ -444,7 +444,7 @@ public class RobolectricTestRunner extends BlockJUnit4ClassRunner {
     databaseMap = null;
   }
 
-  @TestOnly
+  //@TestOnly
   boolean allStateIsCleared() {
     return testLifecycle == null && databaseMap == null;
   }
