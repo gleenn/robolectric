@@ -72,6 +72,7 @@ public class ShadowActivity extends ShadowContextThemeWrapper {
   private int streamType = -1;
   private boolean mIsTaskRoot = true;
   private Menu optionsMenu;
+  private boolean optionsMenuOpen;
 
   public void __constructor__() {
     RobolectricInternals.getConstructor(Activity.class, realActivity, new Class[0]).invoke();
@@ -500,6 +501,10 @@ public class ShadowActivity extends ShadowContextThemeWrapper {
     return optionsMenu;
   }
 
+  public boolean isOptionsMenuOpen() {
+    return optionsMenuOpen;
+  }
+
   /**
    * Container object to hold an Intent, together with the requestCode used
    * in a call to {@code Activity#startActivityForResult(Intent, int)}
@@ -672,6 +677,16 @@ public class ShadowActivity extends ShadowContextThemeWrapper {
   @Implementation
   public final int getVolumeControlStream() {
     return streamType;
+  }
+
+  @Implementation
+  public void openOptionsMenu() {
+    optionsMenuOpen = true;
+  }
+
+  @Implementation
+  public void closeOptionsMenu() {
+    optionsMenuOpen = false;
   }
 
   private final class ActivityInvoker {

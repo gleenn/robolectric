@@ -44,14 +44,7 @@ import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 import static org.robolectric.Robolectric.application;
 import static org.robolectric.Robolectric.buildActivity;
 import static org.robolectric.Robolectric.shadowOf;
@@ -797,7 +790,24 @@ public class ActivityTest {
     assertThat(optionsMenu.getItem(0).getTitle()).isEqualTo("Algebraic!");
   }
 
-  /////////////////////////////
+  @Test
+  public void openOptionsMenu_shouldSetOptionsMenuOpenToTrue() throws Exception {
+    Activity activity = buildActivity(OptionsMenuActivity.class).create().visible().get();
+    activity.openOptionsMenu();
+
+    assertThat(shadowOf(activity).isOptionsMenuOpen()).isTrue();
+  }
+
+  @Test
+  public void closeOptionsMenu_shouldSetOptionsMenuOpenToFalse() throws Exception {
+    Activity activity = buildActivity(OptionsMenuActivity.class).create().visible().get();
+    activity.openOptionsMenu();
+    activity.closeOptionsMenu();
+
+    assertThat(shadowOf(activity).isOptionsMenuOpen()).isFalse();
+  }
+
+/////////////////////////////
 
   private void destroy(Activity activity) {
     new ActivityController(activity).destroy();
