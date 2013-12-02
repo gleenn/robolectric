@@ -207,7 +207,12 @@ public class StubPackageManager extends PackageManager {
     return null;
   }
 
-//  @Override
+  @Override
+  public List<ResolveInfo> queryIntentContentProviders(Intent intent, int flags) {
+    return null;
+  }
+
+  //  @Override
   public List<ResolveInfo> queryIntentServicesAsUser(Intent intent, int flags, int userId) {
     return null;
   }

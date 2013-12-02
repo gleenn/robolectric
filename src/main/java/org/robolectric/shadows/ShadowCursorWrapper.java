@@ -195,6 +195,11 @@ public class ShadowCursorWrapper implements Cursor {
   }
 
   @Implementation
+  public Uri getNotificationUri() {
+    return wrappedCursor.getNotificationUri();
+  }
+
+  @Implementation
   public boolean getWantsAllOnMoveCalls() {
     return wrappedCursor.getWantsAllOnMoveCalls();
   }

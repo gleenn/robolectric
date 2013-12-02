@@ -410,7 +410,7 @@ public class RobolectricTestRunner extends BlockJUnit4ClassRunner {
 
   public int getTargetVersionWhenAppManifestMightBeNullWhaaa(AndroidManifest appManifest) {
     return appManifest == null // app manifest would be null for libraries
-        ? Build.VERSION_CODES.ICE_CREAM_SANDWICH // todo: how should we be picking this?
+        ? Build.VERSION_CODES.CUR_DEVELOPMENT // todo: how should we be picking this?
         : appManifest.getTargetSdkVersion();
   }
 
