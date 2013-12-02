@@ -4,7 +4,6 @@ public class TestIntentSender extends IntentSender {
   public Intent intent;
 
   public TestIntentSender() {
-    super();
-//    super((IIntentSender)null);
+    super((IIntentSender)null);
   }
 }

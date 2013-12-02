@@ -185,11 +185,6 @@ public class TestCursor implements Cursor {
   }
 
   @Override
-  public Uri getNotificationUri() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public boolean getWantsAllOnMoveCalls() {
     throw new UnsupportedOperationException();
   }

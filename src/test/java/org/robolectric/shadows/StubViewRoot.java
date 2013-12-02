@@ -91,15 +91,11 @@ public class StubViewRoot implements ViewParent {
     return null;
   }
 
+
   @Override
-  public void notifySubtreeAccessibilityStateChanged(View child, View source, int changeType) {
+  public void childAccessibilityStateChanged(View child) {
 
   }
-
-//  @Override
-//  public void childAccessibilityStateChanged(View child) {
-//
-//  }
 
   @Override
   public boolean canResolveLayoutDirection() {
