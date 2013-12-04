@@ -19,7 +19,6 @@ build
 
 # IntelliJ
 .idea
-*.iml
 *.iws
 *.ipr
 classes
